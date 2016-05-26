@@ -1,0 +1,33 @@
+nuget {
+	nuspec {
+		id = FreeImage;
+		version : 3.17.0;
+		title: FreeImage;
+		authors: {FreeImage};
+		owners: {Erik Faye-Lund};
+		licenseUrl: "http://freeimage.sourceforge.net/license.html";
+		projectUrl: "http://freeimage.sourceforge.net/";
+		iconUrl: "http://freeimage.sourceforge.net/images/logo.jpg";
+		requireLicenseAcceptance:false;
+		summary: @"FreeImage is an Open Source library project for developers who would like to support popular graphics image formats like PNG, BMP, JPEG, TIFF and others as needed by today's multimedia applications.";
+
+		description: @"FreeImage is an Open Source library project for developers who would like to support popular graphics image formats like PNG, BMP, JPEG, TIFF and others as needed by today's multimedia applications. FreeImage is easy to use, fast, multithreading safe, compatible with all 32-bit or 64-bit versions of Windows, and cross-platform (works both with Linux and Mac OS X).";
+		releaseNotes: "Release 3.17.0 of FreeImage";
+		copyright: "Copyright (c) 1999-2016 Un4seen Developments Ltd. All rights reserved.";
+		tags: { BASS, MP3, OGG, XM, MOD, S3M, native };
+	}
+
+	files {
+		include: { "FreeImage\Dist\x64\FreeImage.h" };
+
+		[Win32] {
+			lib: FreeImage\Dist\x32\FreeImage.lib;
+			bin: FreeImage\Dist\x32\FreeImage.dll;
+		}
+
+		[x64] {
+			lib: FreeImage\Dist\x64\FreeImage.lib;
+			bin: FreeImage\Dist\x64\FreeImage.dll;
+		}
+	}
+}

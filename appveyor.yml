@@ -1,0 +1,17 @@
+os: Visual Studio 2013
+version: 3.17.0+{build}
+
+install:
+  - ps: (New-Object Net.WebClient).DownloadFile('http://coapp.org/files/CoApp.Tools.Powershell.msi', "$($env:USERPROFILE)\CoApp.Tools.Powershell.msi")
+  - ps: Start-Process -FilePath msiexec -ArgumentList /i, "$($env:USERPROFILE)\CoApp.Tools.Powershell.msi", /quiet -Wait
+  - ps: $env:PSModulePath = $env:PSModulePath + ';C:\Program Files (x86)\Outercurve Foundation\Modules'
+  - ps: Import-Module CoApp
+
+build_script:
+  - curl -fsSL -o FreeImage.zip http://downloads.sourceforge.net/freeimage/FreeImage3170Win32Win64.zip
+  - 7z x FreeImage.zip
+  - ps: Write-NuGetPackage nuget.autopkg
+
+artifacts:
+  - path: FreeImage.3.17.0.nupkg
+  - path: FreeImage.redist.3.17.0.nupkg

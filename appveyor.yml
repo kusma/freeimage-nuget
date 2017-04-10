@@ -15,3 +15,12 @@ build_script:
 artifacts:
   - path: FreeImageNative.3.17.0.nupkg
   - path: FreeImageNative.redist.3.17.0.nupkg
+
+deploy:
+  provider: NuGet
+  api_key:
+    secure: obtq4QGczTJPIOisH5WZyhnr6uB68ql82o3jJCryvNXUVQhMFX3hr5LOjodSRCWm
+  skip_symbols: true
+  artifact: /.*\.nupkg/
+  on:
+    appveyor_repo_tag: true

@@ -1,6 +1,6 @@
 nuget {
 	nuspec {
-		id = FreeImage;
+		id = FreeImageNative;
 		version : 3.17.0;
 		title: FreeImage;
 		authors: {FreeImage};

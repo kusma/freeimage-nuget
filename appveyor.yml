@@ -13,5 +13,5 @@ build_script:
   - ps: Write-NuGetPackage nuget.autopkg
 
 artifacts:
-  - path: FreeImage.3.17.0.nupkg
-  - path: FreeImage.redist.3.17.0.nupkg
+  - path: FreeImageNative.3.17.0.nupkg
+  - path: FreeImageNative.redist.3.17.0.nupkg
